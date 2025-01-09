@@ -83,17 +83,19 @@ const ChatBot = () => {
   }, [chatHistory]);
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] px-8 py-4">
-      <div className="max-w-6xl mx-auto px-6 rounded-lg shadow-md relative">
+    <div className="min-h-screen bg-[#1a1a1a] md:px-8 md:py-4 px-2 py-2">
+      <div className="max-w-6xl mx-auto   md:px-6 rounded-lg shadow-md relative">
         <div className="flex gap-2 items-center">
           <img
             src={logo}
-            className="w-[50px] h-[50px] object-cover"
+            className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] object-cover"
             alt="DocAI logo"
           />
-          <h1 className="text-3xl font-bold text-[#2050d4]">DocAI</h1>
+          <h1 className="text-xl md:text-3xl font-bold text-[#2050d4]">
+            DocAI
+          </h1>
         </div>
-        <div className="chat-container rounded-lg p-4 h-[400px] overflow-y-auto">
+        <div className="chat-container rounded-lg p-4 h-[82vh]  md:h-[75vh] overflow-y-auto">
           {chatHistory.map((message, index) => (
             <div
               key={index}
@@ -131,12 +133,12 @@ const ChatBot = () => {
 
         {/* Predefined questions */}
         {showPredefinedQuestions && (
-          <div className="predefined-questions space-x-2 space-y-2 mt-4 p-2  rounded-lg  absolute bottom-[20%]">
+          <div className="predefined-questions space-x-2 space-y-2 mt-4 p-2  rounded-lg  absolute md:bottom-[20%] bottom-[10%]">
             {predefinedQuestions.map((question, index) => (
               <button
                 key={index}
                 onClick={() => handlePredefinedQuestionClick(question)}
-                className="bg-[#2050d4] text-white py-2 px-4 rounded-lg text-left hover:bg-[#123aa8] inline"
+                className="bg-[#2050d4] text-white py-2 px-4 rounded-lg text-left hover:bg-[#123aa8] inline text-[10px] md:text-[16px]"
               >
                 {question}
               </button>
